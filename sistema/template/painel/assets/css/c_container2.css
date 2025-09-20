@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+:root {
+    --fonte-do-titulo: 'Stagera', Arial, Helvetica, sans-serif;
+    --fonte1: 'Roboto', Arial, Helvetica, sans-serif;
+    --fonte2: 'Poppins', Arial, Helvetica, sans-serif;
+
+    --cor1: #1477e7;
+    --cor11: #0e498d;
+    --cor2: #13533f;
+    --cor3: #e3f1f0;
+    --cor4: #72f2eb;
+    --cor5: #747f7f;
+
+    --cor6: #eca39a;
+    --cor7: #44d146;
+    --cor8: #2490ba;
+
+    --branco: #ffffff;
+    --preto: #000000;
+    --amarelo: #f6ff00;
+
+    --fundo-botão-configuração: #ffffff41;
+
+
+    --tamanho0: 5px;
+    --tamanho1: 10px;
+    --tamanho2: 15px;
+    --tamanho3: 20px;
+    --tamanho4: 25px;
+    --tamanho5: 30px;
+    --tamanho6: 35px;
+    --tamanho7: 40px;
+    --tamanho8: 45px;
+    --tamanho9: 50px;
+}
+
+
+
+.tabela_produtos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tabela_produtos thead {
+    background-color: #212529;
+    /* Preto/cinza moderno */
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.tabela_produtos th,
+.tabela_produtos td {
+    padding: 3px 12px 2px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.tabela_produtos tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+    /* Linha alternada */
+}
+
+.tabela_produtos tbody tr:hover {
+    background-color: #f1f3f5;
+    /* Hover mais suave */
+}
+
+.tabela_produtos td[colspan="3"] {
+    text-align: center;
+    font-style: italic;
+    background-color: #fff3cd;
+    /* Amarelo claro (alerta) */
+    color: #856404;
+    font-weight: bold;
+}
+
+.tabela_produtos .lixeira {
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.tabela_produtos .lixeira:hover {
+    color: #dc3545;
+    /* Vermelho bootstrap */
+    transform: scale(1.5);
+}
+
+.tabela_produtos th:nth-child(2),
+.tabela_produtos td:nth-child(2),
+.tabela_produtos th:nth-child(3),
+.tabela_produtos td:nth-child(3) {
+    text-align: center;
+}
+
+/* -------------------------------- */
+
+.tabela_produtos td.verde {
+    background-color: #d4edda;
+    /* verde claro */
+    color: #155724;
+    /* verde escuro */
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+}
+
+.tabela_produtos td.amarelo {
+    background-color: #fff3cd;
+    /* amarelo claro */
+    color: #856404;
+    /* amarelo escuro */
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+}
+
+.tabela_produtos td.vermelho {
+    background-color: #f8d7da;
+    /* vermelho claro */
+    color: #721c24;
+    /* vermelho escuro */
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+}

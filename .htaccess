@@ -1,0 +1,13 @@
+# Impede listagem de diretórios
+Options -Indexes
+
+# Ativa reescrita de URLs
+RewriteEngine On
+
+# Caminho base da aplicação
+RewriteBase /Acompanhamento-Validade-Estoque/
+
+# Se não for arquivo ou diretório existente, redireciona para index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]

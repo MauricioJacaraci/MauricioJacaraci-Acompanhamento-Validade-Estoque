@@ -1,0 +1,22 @@
+{
+    "name": "mauricio/cardapio-digital",
+    "description": "Cardapio Digital Online",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "sistema\\": "sistema/"
+        },
+        "files": [
+            "sistema/configuracoes/configuracao.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Mauricio Miranda"
+        }
+    ],
+    "require": {
+        "pecee/simple-router": "^5.4",
+        "twig/twig": "^3.0"
+    }
+}

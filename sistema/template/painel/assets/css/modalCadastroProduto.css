@@ -1,0 +1,199 @@
+@charset "UTF-8";
+
+/* ESTILOS DA JANELA MODAL */
+
+
+.btn-fechar {
+    background-color: #0b9566;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.btn-abrir,
+.btn-fechar:hover {
+    background-color: #13a14c;
+    color: white;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+/* Estilo geral do modal (overlay) */
+.modal {
+    display: none;
+    /* Modal começa invisível */
+    position: fixed;
+    /* Fixa o modal sobre a tela */
+    z-index: 1;
+    /* Fica acima dos outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Cobre toda a largura */
+    height: 150%;
+    /* Cobre toda a altura */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fundo escuro e semi-transparente */
+}
+
+/* Estilo do conteúdo do modal */
+.modal-conteudo {
+    background-color: #fff;
+    /* Fundo branco */
+    margin: 8% auto;
+    /* Centraliza verticalmente e horizontalmente */
+    border: 1px solid #888;
+    /* Borda cinza */
+    width: 300px;
+    /* Largura fixa */
+    height: 30%;
+    /* Altura fixa */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 1px;
+
+    text-align: center;
+    /* Texto centralizado */
+}
+
+/* Estilo do botão de fechar */
+.fecharModal {
+    color: #ffffff;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top:12px;
+    right: 10px;
+    background-color: red;
+    border-radius: 50%;
+    width: 23px;
+    height: 22px;
+}
+
+.cadastroProduto {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+    height: 100%;
+}
+
+.titulo {
+    background-color: #0f7b3a;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 5px 0 5px 0;
+    font-size: 20px;
+    flex-basis: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastroProduto>form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    flex-basis: 70%;
+}
+
+
+.infoProduto1 {
+    background-color: #ffffff;
+    height: 100%;
+    flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoProduto2 {
+    background-color: #000000;
+    width: 94%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    gap: 5px;
+    padding: 0 0 0 5px;
+}
+
+.infoProduto2>label {
+    background-color: #000000;
+    color: white;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40%;
+}
+
+.infoProduto2>input {
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    width: 61%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 10px;
+    flex-basis: 60%;
+}
+
+.botoes1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px;
+    border-top: 2px solid black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #dee9e1;
+    flex-basis: 15%;
+}
+
+.btn {
+    background-color: #117b58;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn1 {
+    width: 70px;
+    height: 25px;
+}
+
+.btn2 {
+    width: 105px;
+    height: 25px;
+}
+
+.btn3 {
+    background-color: #7b1e1e;
+    width: 105px;
+    height: 25px;
+}

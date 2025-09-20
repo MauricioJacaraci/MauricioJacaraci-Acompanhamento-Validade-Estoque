@@ -1,0 +1,36 @@
+<div class="modal" id="modalAdicionar">
+
+    <div class="modal-conteudo">
+
+        <div class="cadastroProduto">
+            <h2 class="titulo">Cadastro de Produto</h2>
+            <!-- Botão (ícone) para fechar o modal -->
+            <span class="fecharModal"><i class="fa-solid fa-xmark"></i></span>
+
+            <form action="cadastrarProduto" method="post" class="form-produto1" id="form-produto2" autocomplete="off" enctype="multipart/form-data">
+
+                <div class="infoProduto1">
+                    <div class="infoProduto2">
+                        <label for="categoria">Produto</label>
+                        <input type="text" name="produto" id="produto" value="" required placeholder="Nome do produto">
+                    </div>
+                    <div class="infoProduto2">
+                        <label for="categoria">Validade</label>
+                        <input type="date" name="validade" id="produto" value="" required>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="botoes1">
+                <button class="btn btn1" type="submit" form="form-produto2">Cadastrar</button>
+                <button class="btn btn2" type="reset" form="form-produto2">Limpar Campos</button>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+</div>

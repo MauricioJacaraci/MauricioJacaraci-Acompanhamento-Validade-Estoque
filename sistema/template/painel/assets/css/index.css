@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+:root {
+    --fonte-do-titulo: 'Stagera', Arial, Helvetica, sans-serif;
+    --fonte1: 'Roboto', Arial, Helvetica, sans-serif;
+    --fonte2: 'Poppins', Arial, Helvetica, sans-serif;
+
+    --cor1: #1477e7;
+    --cor11: #0e498d;
+    --cor2: #13533f;
+    --cor3: #e3f1f0;
+    --cor4: #72f2eb;
+    --cor5: #747f7f;
+
+    --cor6: #eca39a;
+    --cor7: #44d146;
+    --cor8: #2490ba;
+
+    --branco: #ffffff;
+    --preto: #000000;
+    --amarelo: #f6ff00;
+
+    --fundo-botão-configuração: #ffffff41;
+
+
+    --tamanho0: 5px;
+    --tamanho1: 10px;
+    --tamanho2: 15px;
+    --tamanho3: 20px;
+    --tamanho4: 25px;
+    --tamanho5: 30px;
+    --tamanho6: 35px;
+    --tamanho7: 40px;
+    --tamanho8: 45px;
+    --tamanho9: 50px;
+}
+
+
+/* ******************************************************* */
+/* estilos para a mensagem "Nenhum produto cadastrado." */
+.nenhum_produto {
+    --bg: linear-gradient(135deg, #ffffff 0%, #f7fbff 100%);
+    --accent: #2b9cff;
+    --text: #0f1724;
+    --muted: #5b6670;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 720px;
+    width: 100%;
+    margin: 1.5rem auto;
+    padding: 0.9rem 1.1rem;
+    background: var(--bg);
+    border: 1px solid rgba(43, 156, 255, 0.12);
+    border-left: 4px solid var(--accent);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-size: 0.98rem;
+    line-height: 1.3;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(15, 23, 36, 0.06);
+    box-sizing: border-box;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+/* ícone no início */
+.nenhum_produto::before {
+    content: "📦";
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    font-size: 30px;
+    background: linear-gradient(180deg, rgba(43, 156, 255, 0.12), rgba(43, 156, 255, 0.03));
+    border-radius: 8px;
+    border: 1px solid rgba(43, 156, 255, 0.08);
+    transform-origin: center;
+    transition: transform 260ms ease;
+}
+
+/* leve efeito ao passar o mouse (se quiser) */
+.nenhum_produto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(15, 23, 36, 0.09);
+}
+
+.nenhum_produto:hover::before {
+    transform: rotate(-8deg) scale(1.05);
+}
+
+/* texto principal em destaque e texto secundário possível */
+.nenhum_produto .titulo {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.nenhum_produto .sub {
+    display: block;
+    color: var(--muted);
+    font-size: 0.86rem;
+    margin-top: 2px;
+}
+
+/* responsividade: em telas pequenas mostra bloco com alinhamento vertical */
+@media (max-width: 420px) {
+    .nenhum_produto {
+        padding: 0.85rem;
+        gap: 0.6rem;
+        border-radius: 10px;
+    }
+
+    .nenhum_produto::before {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        flex: 0 0 36px;
+    }
+}
+/* ******************************************************* */
+
+.container2 {
+    background-color: var(--branco);
+    width: 100%;
+    height: 50px;
+    padding: 10px 0px 10px 0px;
+    border-top-left-radius: 20px ;
+    border-top-right-radius: 20px;
+
+    flex-basis: 84%;
+
+    overflow-y: auto;
+}
+
+.footer {
+    background-color: var(--cor2);
+    color: var(--branco);
+    position: fixed;
+    bottom: 34px;
+    min-width: 350px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer>a{
+    text-decoration: none;
+}
+.footer>button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.fa-house, .fa-pen-to-square{
+    color: white;
+    font-size: 40px;
+}
+.fa-triangle-exclamation{
+    color: rgb(255, 0, 0);
+    font-size: 18px;
+}

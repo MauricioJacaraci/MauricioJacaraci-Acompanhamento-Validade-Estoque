@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Sistema de Controle de Validade de Produtos no Estoque">
+
+    <!-- TITULO DA PAGINA -->
+    <title>
+        {% if nome_pagina %}
+        {{ nome_pagina }}
+        {% else %}
+        {{ constant('NOME_SITE') }}
+        {% endif %}
+    </title>
+
+    <!-- ICON DO SITE -->
+    <link rel="shortcut icon" href="{{ url('sistema/template/painel/assets/imagens/ico.png') }}" type="image/png">
+
+
+    <!-- CSS BASE -->
+    <link rel="stylesheet" href="{{ url('sistema/template/painel/assets/css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url('sistema/template/painel/assets/css/base.css') }}">
+
+
+    <!-- CSS ESPECIFICO PARA CADA PAGINA -->
+    {% if rota_atual == 'index' %}
+    <link rel="stylesheet" href="{{ url('sistema/template/painel/assets/css/index.css') }}">
+    <link rel="stylesheet" href="{{ url('sistema/template/painel/assets/css/c_container2.css') }}">
+    <link rel="stylesheet" href="{{ url('sistema/template/painel/assets/css/modalCadastroProduto.css') }}">
+
+    {% endif %}
+
+
+
+</head>
+
+<body>
+    <div class="container1">
+
+        <h1 class="titulo1">Controle de Validade</h1>    
+
+        {% block conteudo %} {% endblock %}
+    
+        <footer class="footer_base">
+            &copy; Mauricio - 2025 - Todos os direitos reservados.
+        </footer>
+
+    </div>
+    
+
+    <!-- SCRIPT PARA ICONES -->
+    <script src="https://kit.fontawesome.com/647ff365ba.js" crossorigin="anonymous"></script>
+
+    {% if rota_atual == 'index' %}
+    <script src="{{ url('sistema/template/painel/assets/js/modalCadastroProduto.js') }}"></script>
+    <script src="{{ url('sistema/template/painel/assets/js/excluirProduto.js') }}"></script>
+    {% endif %}
+</body>
+
+</html>
