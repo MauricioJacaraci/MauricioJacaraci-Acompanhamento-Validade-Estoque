@@ -8,20 +8,20 @@ try {
 
       
       // ----------------------------------------------------------
-      SimpleRouter::get(URL_SITE, 'SiteControlador@index');
-      SimpleRouter::get(URL_SITE . 'index', 'SiteControlador@index');
+      SimpleRouter::match(['get', 'post'], URL_SITE, 'SiteControlador@index');
+      SimpleRouter::match(['get', 'post'], URL_SITE . 'index', 'SiteControlador@index');
       // ----------------------------------------------------------
       //ROTA DE CADASTRAR PRODUTO
-      SimpleRouter::post(URL_SITE . 'cadastrarProduto', 'SiteControlador@cadastrarProduto');
+      SimpleRouter::match(['get', 'post'], URL_SITE . 'cadastrarProduto', 'SiteControlador@cadastrarProduto');
       // ----------------------------------------------------------
       //ROTA DE EXCLUIR PRODUTO
       SimpleRouter::match(['get', 'post'], URL_SITE . 'produtoExcluir/{id}', 'SiteControlador@excluirProduto');
       // ----------------------------------------------------------
       //ROTA DE ATUALIZAR QUANTIDADE
-      SimpleRouter::post(URL_SITE . 'quantidade/atualizar', 'SiteControlador@atualizarQuantidade');
+      SimpleRouter::match(['get', 'post'], URL_SITE . 'quantidade/atualizar', 'SiteControlador@atualizarQuantidade');
       // ----------------------------------------------------------
       //ROTA DE VERIFICAR VALIDADE
-      SimpleRouter::post(URL_SITE . 'verificarValidade', 'SiteControlador@verificarValidade');
+      SimpleRouter::match(['get', 'post'], URL_SITE . 'verificarValidade', 'SiteControlador@verificarValidade');
       // ----------------------------------------------------------
    });
 

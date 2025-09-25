@@ -25,10 +25,10 @@ class Tab_Produtos extends Modelos
     {
 
         $query = "INSERT INTO cadastro_produtos (produto, data_validade) 
-                  VALUES (:nome, :data_validade)";
+                  VALUES (:produto, :data_validade)";
 
         $stmt = Conexao::getInstancia()->prepare($query);
-        $stmt->bindParam(':nome', $produto['produto'], \PDO::PARAM_STR);
+        $stmt->bindParam(':produto', $produto['produto'], \PDO::PARAM_STR);
         $stmt->bindParam(':data_validade', $produto['validade'], \PDO::PARAM_STR);
         $stmt->execute();
     }

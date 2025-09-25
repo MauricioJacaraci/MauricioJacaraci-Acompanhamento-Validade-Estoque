@@ -48,10 +48,8 @@ class SiteControlador extends Controlador
     {
         $produto = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-        if ($produto && isset($produto['produto']) && isset($produto['validade'])) {
-            $tabCategoriaProdutos = new Tab_Produtos();
-            $tabCategoriaProdutos->cadastrarProduto($produto);
-
+        if (isset($produto)) {
+        new Tab_Produtos()->cadastrarProduto($produto);
         }
         Helpers::redirecionar('index');
 
