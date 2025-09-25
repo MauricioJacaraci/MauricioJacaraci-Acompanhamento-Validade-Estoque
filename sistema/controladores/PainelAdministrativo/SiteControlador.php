@@ -92,7 +92,7 @@ class SiteControlador extends Controlador
                 $diasRestantes = (int) $diasRestantes;
 
                 // Filtra entre 1 e 15 dias
-                if ($diasRestantes >= 1 && $diasRestantes <= 15) {
+                if ($diasRestantes >= 10 && $diasRestantes <= 15) {
                     $value['dias_restantes'] = $diasRestantes;
                     $produtosAviso[] = $value;
                 }
