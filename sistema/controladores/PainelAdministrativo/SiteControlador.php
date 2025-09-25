@@ -49,7 +49,7 @@ class SiteControlador extends Controlador
         $produto = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
         if (isset($produto)) {
-        $cadastro = (new Tab_Produtos())->cadastrarProduto($produto);
+        (new Tab_Produtos())->cadastrarProduto($produto);
         }
         Helpers::redirecionar('index');
 
