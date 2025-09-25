@@ -5,7 +5,7 @@ namespace sistema\modelo;
 use sistema\configuracoes\Conexao;
 use sistema\configuracoes\Modelos;
 
-class Tab_Categoria_Produtos extends Modelos
+class Tab_Produtos extends Modelos
 {
 
 

@@ -20,6 +20,9 @@ try {
       //ROTA DE ATUALIZAR QUANTIDADE
       SimpleRouter::post(URL_SITE . 'quantidade/atualizar', 'SiteControlador@atualizarQuantidade');
       // ----------------------------------------------------------
+      //ROTA DE VERIFICAR VALIDADE
+      SimpleRouter::post(URL_SITE . 'verificarValidade', 'SiteControlador@verificarValidade');
+      // ----------------------------------------------------------
    });
 
    // Executa o direcionamento das rotas

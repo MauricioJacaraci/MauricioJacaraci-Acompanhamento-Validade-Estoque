@@ -3,7 +3,7 @@
 namespace sistema\controladores\PainelAdministrativo;
 
 use sistema\controladores\Principal\Controlador;
-use sistema\modelo\Tab_Categoria_Produtos;
+use sistema\modelo\Tab_Produtos;
 use sistema\configuracoes\Helpers;
 
 class SiteControlador extends Controlador
@@ -27,7 +27,7 @@ class SiteControlador extends Controlador
     {
 
         
-        $resultado = (new Tab_Categoria_Produtos())->buscarTodas()->ordem('data_validade ASC')->resultado(true);
+        $resultado = (new Tab_Produtos())->buscarTodas()->ordem('data_validade ASC')->resultado(true);
 
         if($resultado){
             foreach ($resultado as $key => $value) {
@@ -49,7 +49,7 @@ class SiteControlador extends Controlador
         $produto = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
         if ($produto && isset($produto['produto']) && isset($produto['validade'])) {
-            $tabCategoriaProdutos = new Tab_Categoria_Produtos();
+            $tabCategoriaProdutos = new Tab_Produtos();
             $tabCategoriaProdutos->cadastrarProduto($produto);
 
         }
@@ -61,7 +61,7 @@ class SiteControlador extends Controlador
     // Exclui um produto pelo ID
     public function excluirProduto(int $id)
     {
-        (new Tab_Categoria_Produtos())->excluirProduto($id);
+        (new Tab_Produtos())->excluirProduto($id);
         
         Helpers::redirecionar('index');
     }
@@ -73,13 +73,34 @@ class SiteControlador extends Controlador
         $quantidade = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
         if (isset($quantidade['id']) && isset($quantidade['quantidade'])) {
-            $tabCategoriaProdutos = new Tab_Categoria_Produtos();
+            $tabCategoriaProdutos = new Tab_Produtos();
             $tabCategoriaProdutos->atualizarQuantidade($quantidade['id'], $quantidade['quantidade']);
         }
     }
 
 
+    // Verifica a validade dos produtos
+    public function verificarValidade()
+    {
+        $resultado = (new Tab_Produtos())->buscarTodas()->resultado(true);
 
+        $produtosAviso = [];
 
+        if ($resultado) {
+            foreach ($resultado as $value) {
+                $diasRestantes = (strtotime($value['data_validade']) - strtotime(date('Y-m-d'))) / (60 * 60 * 24);
+                $diasRestantes = (int) $diasRestantes;
 
+                // Filtra entre 1 e 15 dias
+                if ($diasRestantes >= 1 && $diasRestantes <= 15) {
+                    $value['dias_restantes'] = $diasRestantes;
+                    $produtosAviso[] = $value;
+                }
+            }
+        }
+
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($produtosAviso, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        exit;
+    }
 }
