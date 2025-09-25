@@ -67,6 +67,17 @@ class SiteControlador extends Controlador
     }
     
 
+    // Atualiza a quantidade de um produto
+    public function atualizarQuantidade()
+    {
+        $quantidade = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+        if (isset($quantidade['id']) && isset($quantidade['quantidade'])) {
+            $tabCategoriaProdutos = new Tab_Categoria_Produtos();
+            $tabCategoriaProdutos->atualizarQuantidade($quantidade['id'], $quantidade['quantidade']);
+        }
+    }
+
 
 
 

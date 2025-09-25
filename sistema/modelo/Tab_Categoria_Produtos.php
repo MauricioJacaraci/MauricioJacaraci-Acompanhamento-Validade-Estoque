@@ -44,5 +44,16 @@ class Tab_Categoria_Produtos extends Modelos
     }
 
 
+    public function atualizarQuantidade(int $id, int $quantidade): void
+    {
+        $query = "UPDATE cadastro_produtos SET quantidade = :quantidade WHERE id = :id";
+
+        $stmt = Conexao::getInstancia()->prepare($query);
+        $stmt->bindParam(':quantidade', $quantidade, \PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+
 
 }

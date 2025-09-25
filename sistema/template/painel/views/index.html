@@ -13,6 +13,7 @@
             <tr>
                 <th>Produto</th>
                 <th>Validade</th>
+                <th>Qtd</th>
                 <th>Ação</th>
             </tr>
         </thead>
@@ -20,6 +21,12 @@
             <tr>
                 <td>{{ produto.produto }}</td>
                 <td>{{ produto.data_validade|date("d/m/Y") }}</td>
+
+                <!-- DIV PARA GUARDAR URL USADA NO JAVA-SCRIPT PARA ATUALIZAÇÃO DE STATUS -->
+                <div id="url_atualizar_quantidade" data-url-quantidade="{{ url('quantidade/atualizar') }}" style="display: none;"></div>
+
+                <td class="editavel" data-id="{{ produto.id }}">{{ produto.quantidade }}</td>
+
                 <td>
                     <a href="{{ url('produtoExcluir/' ~ produto.id) }}">
                         <i class="fa-solid fa-trash-can lixeira" style="color: black;" ></i>
@@ -27,7 +34,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="{% if produto.dias_restantes <= 15 %}vermelho{% elseif produto.dias_restantes <= 30 %}amarelo{% else %}verde{% endif %}">
+                <td colspan="4" class="{% if produto.dias_restantes <= 15 %}vermelho{% elseif produto.dias_restantes <= 30 %}amarelo{% else %}verde{% endif %}">
                     {% if produto.dias_restantes < 0 %}
                         <i class="fa-solid fa-triangle-exclamation"></i> Produto vencido há <strong>{{ produto.dias_restantes|abs }} dias</strong>.
                     {% elseif produto.dias_restantes == 0 %}

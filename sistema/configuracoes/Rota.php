@@ -17,6 +17,9 @@ try {
       //ROTA DE EXCLUIR PRODUTO
       SimpleRouter::match(['get', 'post'], URL_SITE . 'produtoExcluir/{id}', 'SiteControlador@excluirProduto');
       // ----------------------------------------------------------
+      //ROTA DE ATUALIZAR QUANTIDADE
+      SimpleRouter::post(URL_SITE . 'quantidade/atualizar', 'SiteControlador@atualizarQuantidade');
+      // ----------------------------------------------------------
    });
 
    // Executa o direcionamento das rotas
