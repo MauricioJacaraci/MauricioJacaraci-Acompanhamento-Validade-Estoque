@@ -4,10 +4,25 @@ Options -Indexes
 # Ativa reescrita de URLs
 RewriteEngine On
 
-# Caminho base da aplicação
+# Ambiente LOCALHOST
+RewriteCond %{HTTP_HOST} ^localhost [NC]
+RewriteRule ^ - [S=1]
 RewriteBase /Acompanhamento-Validade-Estoque/
 
-# Se não for arquivo ou diretório existente, redireciona para index.php
+# Ambiente PRODUÇÃO INTERNO (192.168.1.9)
+RewriteCond %{HTTP_HOST} ^192\.168\.1\.9 [NC]
+RewriteRule ^ - [S=1]
+RewriteBase /Acompanhamento-Validade-Estoque/
+
+# Ambiente PRODUÇÃO EXTERNO (IP público 75.119.142.113:8080)
+RewriteCond %{HTTP_HOST} ^75\.119\.142\.113 [NC]
+RewriteRule ^ - [S=1]
+RewriteBase /Acompanhamento-Validade-Estoque/
+
+# Se não entrar em nenhum caso acima → assume raiz
+RewriteBase /
+
+# Se não for arquivo ou diretório, redireciona para index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]

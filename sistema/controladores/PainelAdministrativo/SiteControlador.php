@@ -46,14 +46,18 @@ class SiteControlador extends Controlador
 
     public function cadastrarProduto()
     {
+        // Captura todos os dados enviados via POST e aplica filtro padrão
         $produto = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-        if (isset($produto)) {
-        (new Tab_Produtos())->cadastrarProduto($produto);
+        // Verifica se a variável $produto existe
+        if (!empty($produto)) {
+            (new Tab_Produtos())->cadastrarProduto($produto);
         }
-        Helpers::redirecionar('index');
 
+        // Redireciona de volta para a rota 'index'
+        Helpers::redirecionar('index');
     }
+
 
 
     // Exclui um produto pelo ID
