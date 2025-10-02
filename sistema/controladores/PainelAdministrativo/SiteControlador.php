@@ -82,6 +82,8 @@ class SiteControlador extends Controlador
     }
 
 
+    // ESSE TRECHO SÓ É EXECUTADO POR UM NÓ HTTP-REQUEST DO N8N
+
     // Verifica a validade dos produtos
     public function verificarValidade()
     {
